@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Sparkles, Bell, User, CheckCircle2, Clock, Settings, Moon, Sun, Languages } from "lucide-react";
+import { Sparkles, Bell, User, CheckCircle2, Clock, Settings, Languages } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { signOut } from "next-auth/react";
-import { useTheme } from "next-themes";
+
 import { useLanguage } from "@/lib/LanguageContext";
 
 interface HeaderProps {
@@ -20,7 +20,7 @@ export function Header({ userName = "User", hasCheckedIn = false }: HeaderProps)
     const notificationsRef = useRef<HTMLDivElement>(null);
     const profileRef = useRef<HTMLDivElement>(null);
 
-    const { theme, setTheme } = useTheme();
+
     const { language, setLanguage, t } = useLanguage();
 
     // Click outside to close Settings
@@ -140,52 +140,15 @@ export function Header({ userName = "User", hasCheckedIn = false }: HeaderProps)
                                     <h3 className="font-semibold text-sm text-foreground">{t('settings')}</h3>
                                 </div>
                                 <div className="p-2 space-y-1">
-                                    {/* Theme Selector - Apple Style */}
-                                    <div className="p-2 space-y-2">
-                                        <div className="flex items-center gap-2 text-sm text-foreground mb-2">
-                                            {theme === 'dark' ? <Moon className="size-4 text-purple-500" /> : theme === 'light' ? <Sun className="size-4 text-orange-500" /> : <Settings className="size-4 text-blue-500" />}
-                                            {t('theme')}
-                                        </div>
-                                        <div className="grid grid-cols-3 gap-1 p-1 bg-secondary/30 dark:bg-slate-800/50 rounded-lg">
-                                            <button
-                                                onClick={() => setTheme('light')}
-                                                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${theme === 'light'
-                                                    ? 'bg-white dark:bg-slate-700 shadow-sm text-foreground'
-                                                    : 'text-muted-foreground hover:text-foreground'
-                                                    }`}
-                                            >
-                                                {t('light')}
-                                            </button>
-                                            <button
-                                                onClick={() => setTheme('dark')}
-                                                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${theme === 'dark'
-                                                    ? 'bg-white dark:bg-slate-700 shadow-sm text-foreground'
-                                                    : 'text-muted-foreground hover:text-foreground'
-                                                    }`}
-                                            >
-                                                {t('dark')}
-                                            </button>
-                                            <button
-                                                onClick={() => setTheme('system')}
-                                                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${theme === 'system'
-                                                    ? 'bg-white dark:bg-slate-700 shadow-sm text-foreground'
-                                                    : 'text-muted-foreground hover:text-foreground'
-                                                    }`}
-                                            >
-                                                {t('auto')}
-                                            </button>
-                                        </div>
-                                    </div>
-
                                     {/* Language Toggle */}
-                                    <div className="flex items-center justify-between p-2 rounded-xl hover:bg-secondary/50 dark:hover:bg-slate-800 transition-colors">
+                                    <div className="flex items-center justify-between p-2 rounded-xl hover:bg-secondary/50 transition-colors">
                                         <div className="flex items-center gap-2 text-sm text-foreground">
                                             <Languages className="size-4 text-blue-500" />
                                             {t('language')}
                                         </div>
                                         <button
                                             onClick={() => setLanguage(language === 'en' ? 'id' : 'en')}
-                                            className="ml-auto text-xs font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg border border-border dark:border-slate-700 min-w-[60px] text-center"
+                                            className="ml-auto text-xs font-medium bg-slate-100 px-2 py-1 rounded-lg border border-border min-w-[60px] text-center"
                                         >
                                             {language === 'en' ? 'EN' : 'ID'}
                                         </button>
