@@ -41,13 +41,13 @@ export default function SignupPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors flex items-center justify-center p-6">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 transition-colors flex items-center justify-center p-6">
             <motion.div
                 initial={{ opacity: 0, y: 20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 className="w-full max-w-md"
             >
-                <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl shadow-xl p-8 space-y-8 border border-white/20 dark:border-slate-800">
+                <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-8 space-y-8 border border-white/20 ">
                     <div className="text-center space-y-3">
                         <div className="inline-flex items-center justify-center">
                             <div className="size-16 rounded-2xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
@@ -71,7 +71,7 @@ export default function SignupPage() {
                                 placeholder="Full Name"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-secondary/50 dark:bg-slate-800/50 border border-border dark:border-slate-700 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                                className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
                                 required
                             />
                         </div>
@@ -84,7 +84,7 @@ export default function SignupPage() {
                                 placeholder="Email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-secondary/50 dark:bg-slate-800/50 border border-border dark:border-slate-700 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                                className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
                                 required
                             />
                         </div>
@@ -97,7 +97,7 @@ export default function SignupPage() {
                                 placeholder="Password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className="w-full pl-12 pr-12 py-3.5 rounded-xl bg-secondary/50 dark:bg-slate-800/50 border border-border dark:border-slate-700 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                                className="w-full pl-12 pr-12 py-3.5 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
                                 required
                             />
                             <button

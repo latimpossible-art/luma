@@ -116,11 +116,11 @@ export function StreakCalendar({ className }: { className?: string }) {
     const years = Array.from({ length: 5 }, (_, i) => currentYear - 2 + i);
 
     return (
-        <div className={`bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-sm border border-border dark:border-slate-800 relative transition-colors ${className}`}>
+        <div className={`bg-white rounded-3xl p-6 shadow-sm border border-border relative transition-colors ${className}`}>
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
-                    <div className="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-full">
+                    <div className="p-2 bg-orange-100 rounded-full">
                         <Flame className="size-5 text-orange-500 fill-orange-500" />
                     </div>
                     <div>
@@ -146,12 +146,12 @@ export function StreakCalendar({ className }: { className?: string }) {
                         </button>
 
                         {showYearPicker && (
-                            <div className="absolute top-full mt-1 left-0 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-border dark:border-slate-700 p-2 z-50">
+                            <div className="absolute top-full mt-1 left-0 bg-white rounded-lg shadow-lg border border-border p-2 z-50">
                                 {years.map(year => (
                                     <button
                                         key={year}
                                         onClick={() => changeYear(year)}
-                                        className={`block w-full text-left px-3 py-1.5 rounded text-sm hover:bg-slate-100 dark:hover:bg-slate-700 ${year === currentYear ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600' : 'text-foreground'
+                                        className={`block w-full text-left px-3 py-1.5 rounded text-sm hover:bg-slate-100 :bg-slate-700 ${year === currentYear ? 'bg-blue-100 text-blue-600' : 'text-foreground'
                                             }`}
                                     >
                                         {year}
@@ -164,14 +164,14 @@ export function StreakCalendar({ className }: { className?: string }) {
                 <div className="flex gap-1">
                     <button
                         onClick={prevMonth}
-                        className="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
+                        className="p-1 hover:bg-slate-100 :bg-slate-800 rounded-full transition-colors"
                     >
                         <ChevronLeft className="size-4 text-slate-400" />
                     </button>
                     <button
                         onClick={nextMonth}
                         disabled={new Date() < new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1)}
-                        className="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors disabled:opacity-30 disabled:hover:bg-transparent"
+                        className="p-1 hover:bg-slate-100 :bg-slate-800 rounded-full transition-colors disabled:opacity-30 disabled:hover:bg-transparent"
                     >
                         <ChevronRight className="size-4 text-slate-400" />
                     </button>
@@ -211,10 +211,10 @@ export function StreakCalendar({ className }: { className?: string }) {
                                     ${isToday
                                         ? "bg-blue-600 text-white shadow-md font-medium"
                                         : hasEntry
-                                            ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium"
-                                            : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
+                                            ? "bg-green-100 text-green-700 font-medium"
+                                            : "text-slate-600 hover:bg-slate-50 :bg-slate-800"
                                     }
-                                    ${isSelected ? "ring-2 ring-offset-2 dark:ring-offset-slate-900 ring-blue-400 scale-110" : ""}
+                                    ${isSelected ? "ring-2 ring-offset-2 ring-blue-400 scale-110" : ""}
                                 `}
                             >
                                 {day}
@@ -230,14 +230,14 @@ export function StreakCalendar({ className }: { className?: string }) {
                                         initial={{ opacity: 0, y: 10, scale: 0.9 }}
                                         animate={{ opacity: 1, y: 0, scale: 1 }}
                                         exit={{ opacity: 0, y: 5, scale: 0.9 }}
-                                        className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 z-50 w-40 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-border dark:border-slate-700 p-3 text-center"
+                                        className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 z-50 w-40 bg-white rounded-xl shadow-xl border border-border p-3 text-center"
                                         style={{ pointerEvents: 'auto' }}
                                     >
-                                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 size-2 bg-white dark:bg-slate-800 border-b border-r border-border dark:border-slate-700 rotate-45" />
+                                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 size-2 bg-white border-b border-r border-border rotate-45" />
 
                                         {isToday && !hasEntry ? (
                                             <div className="space-y-2">
-                                                <p className="text-xs font-medium text-slate-700 dark:text-slate-300">{t('notCheckedIn')}</p>
+                                                <p className="text-xs font-medium text-slate-700 ">{t('notCheckedIn')}</p>
                                                 <Link href="/check-in">
                                                     <button className="text-[10px] bg-blue-600 text-white px-3 py-1.5 rounded-full hover:bg-blue-700 w-full transition-colors">
                                                         {t('checkIn')}
@@ -249,12 +249,12 @@ export function StreakCalendar({ className }: { className?: string }) {
                                                 <div className="flex justify-center">
                                                     <PartyPopper className="size-4 text-purple-500" />
                                                 </div>
-                                                <p className="text-xs font-medium text-slate-700 dark:text-slate-300">{t('greatJob')}</p>
+                                                <p className="text-xs font-medium text-slate-700 ">{t('greatJob')}</p>
                                                 <p className="text-[10px] text-muted-foreground">
                                                     {t('mood')}: {calendarData[day].entries[0]?.mood || "Unknown"}
                                                 </p>
                                                 {calendarData[day].entries.length > 1 && (
-                                                    <p className="text-[9px] text-blue-600 dark:text-blue-400">
+                                                    <p className="text-[9px] text-blue-600 ">
                                                         +{calendarData[day].entries.length - 1} more
                                                     </p>
                                                 )}
@@ -284,7 +284,7 @@ export function StreakCalendar({ className }: { className?: string }) {
             )}
 
             {loading && (
-                <div className="absolute inset-0 bg-white/50 dark:bg-slate-900/50 rounded-3xl flex items-center justify-center">
+                <div className="absolute inset-0 bg-white/50 rounded-3xl flex items-center justify-center">
                     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
                 </div>
             )}

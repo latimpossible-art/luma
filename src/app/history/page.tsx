@@ -48,7 +48,7 @@ export default function HistoryPage() {
 
     if (status === "loading" || loading) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-950">
+            <div className="min-h-screen flex items-center justify-center bg-gray-50 ">
                 <Loader2 className="animate-spin size-8 text-blue-500" />
             </div>
         );
@@ -64,19 +64,19 @@ export default function HistoryPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-blue-50/30 dark:from-slate-950 dark:to-slate-900 transition-colors p-6">
+        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-blue-50/30 transition-colors p-6">
             <div className="max-w-4xl mx-auto space-y-8">
                 {/* Header */}
                 <div className="flex items-center gap-4">
-                    <Link href="/dashboard" className="p-2 rounded-full hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors">
-                        <ChevronLeft className="size-6 text-gray-600 dark:text-gray-400" />
+                    <Link href="/dashboard" className="p-2 rounded-full hover:bg-white/50 :bg-slate-800/50 transition-colors">
+                        <ChevronLeft className="size-6 text-gray-600 " />
                     </Link>
-                    <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">Riwayat Jurnal</h1>
+                    <h1 className="text-2xl font-bold text-gray-800 ">Riwayat Jurnal</h1>
                 </div>
 
                 {/* Content */}
                 {entries.length === 0 ? (
-                    <div className="text-center py-20 text-gray-500 dark:text-gray-400">
+                    <div className="text-center py-20 text-gray-500 ">
                         <Calendar className="size-12 mx-auto mb-4 opacity-50" />
                         <p>Belum ada riwayat jurnal.</p>
                         <Link href="/check-in" className="text-blue-500 hover:underline mt-2 inline-block">
@@ -94,12 +94,12 @@ export default function HistoryPage() {
                             >
                                 <div className="flex justify-between items-start mb-4">
                                     <div className="flex items-center gap-3">
-                                        <div className="p-2 rounded-full bg-gray-50 dark:bg-slate-800">
+                                        <div className="p-2 rounded-full bg-gray-50 ">
                                             {getMoodIcon(entry.mood)}
                                         </div>
                                         <div>
-                                            <p className="font-semibold text-gray-800 dark:text-gray-100 capitalize">{entry.mood}</p>
-                                            <p className="text-xs text-gray-500 dark:text-gray-400">
+                                            <p className="font-semibold text-gray-800 capitalize">{entry.mood}</p>
+                                            <p className="text-xs text-gray-500 ">
                                                 {new Date(entry.createdAt).toLocaleDateString("id-ID", {
                                                     weekday: 'long',
                                                     year: 'numeric',
@@ -111,18 +111,18 @@ export default function HistoryPage() {
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-medium">
+                                    <div className="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-medium">
                                         Intensity: {entry.scale}/10
                                     </div>
                                 </div>
 
-                                <p className="text-gray-600 dark:text-gray-300 mb-4 bg-gray-50/50 dark:bg-slate-800/50 p-4 rounded-xl italic border-l-4 border-gray-200 dark:border-slate-700">
+                                <p className="text-gray-600 mb-4 bg-gray-50/50 p-4 rounded-xl italic border-l-4 border-gray-200 ">
                                     "{entry.content}"
                                 </p>
 
                                 {entry.insight && (
-                                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 rounded-xl border border-blue-100/50 dark:border-blue-800/50">
-                                        <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-4 rounded-xl border border-blue-100/50 ">
+                                        <p className="text-sm text-gray-700 leading-relaxed">
                                             <span className="font-semibold text-blue-600 block mb-1">Insight AI:</span>
                                             {entry.insight}
                                         </p>

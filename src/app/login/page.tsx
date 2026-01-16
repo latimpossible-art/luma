@@ -37,14 +37,14 @@ export default function LoginPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors flex items-center justify-center p-6">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 transition-colors flex items-center justify-center p-6">
             <motion.div
                 initial={{ opacity: 0, y: 20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 className="w-full max-w-md"
             >
                 {/* Card */}
-                <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl shadow-xl p-8 space-y-8 border border-white/20 dark:border-slate-800">
+                <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-8 space-y-8 border border-white/20 ">
                     {/* Logo & Tagline */}
                     <div className="text-center space-y-3">
                         <div className="inline-flex items-center justify-center">
@@ -70,7 +70,7 @@ export default function LoginPage() {
                                 placeholder="Email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-secondary/50 dark:bg-slate-800/50 border border-border dark:border-slate-700 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                                className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
                             />
                         </div>
 
@@ -82,7 +82,7 @@ export default function LoginPage() {
                                 placeholder="Password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className="w-full pl-12 pr-12 py-3.5 rounded-xl bg-secondary/50 dark:bg-slate-800/50 border border-border dark:border-slate-700 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                                className="w-full pl-12 pr-12 py-3.5 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
                             />
                             <button
                                 type="button"
@@ -125,7 +125,7 @@ export default function LoginPage() {
                             <div className="w-full border-t border-border"></div>
                         </div>
                         <div className="relative flex justify-center text-sm">
-                            <span className="px-4 bg-white dark:bg-slate-900 text-muted-foreground">or</span>
+                            <span className="px-4 bg-white text-muted-foreground">or</span>
                         </div>
                     </div>
 
@@ -134,7 +134,7 @@ export default function LoginPage() {
                         {/* Google */}
                         <button
                             type="button"
-                            className="w-full py-3.5 rounded-xl bg-white dark:bg-slate-800 border border-border dark:border-slate-700 font-medium flex items-center justify-center gap-3 hover:bg-secondary/50 dark:hover:bg-slate-700 transition-colors"
+                            className="w-full py-3.5 rounded-xl bg-white border border-border font-medium flex items-center justify-center gap-3 hover:bg-secondary/50 :bg-slate-700 transition-colors"
                         >
                             <svg className="size-5" viewBox="0 0 24 24">
                                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -160,7 +160,7 @@ export default function LoginPage() {
                         <button
                             type="button"
                             onClick={handleGuestLogin}
-                            className="w-full py-3.5 rounded-xl bg-secondary dark:bg-slate-800 text-secondary-foreground font-medium flex items-center justify-center gap-3 hover:bg-secondary/80 dark:hover:bg-slate-700 transition-colors"
+                            className="w-full py-3.5 rounded-xl bg-secondary text-secondary-foreground font-medium flex items-center justify-center gap-3 hover:bg-secondary/80 :bg-slate-700 transition-colors"
                         >
                             <Sparkles className="size-5" />
                             Continue as Guest

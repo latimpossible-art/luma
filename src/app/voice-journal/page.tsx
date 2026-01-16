@@ -68,12 +68,12 @@ export default function VoiceJournalPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50/30 dark:from-slate-950 dark:to-slate-900 transition-colors flex flex-col">
+        <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50/30 transition-colors flex flex-col">
             <Header />
 
             <main className="flex-1 flex flex-col max-w-2xl mx-auto w-full p-6 relative">
                 {/* Back Link */}
-                <Link href="/dashboard" className="absolute top-6 left-6 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">
+                <Link href="/dashboard" className="absolute top-6 left-6 text-slate-400 hover:text-slate-600 :text-slate-300">
                     <ArrowLeft className="size-6" />
                 </Link>
 
@@ -89,15 +89,15 @@ export default function VoiceJournalPage() {
                                 <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping" />
                                 <Mic className={`size-12 ${isListening ? "text-blue-600" : "text-slate-400"}`} />
                             </motion.div>
-                            <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-100">
+                            <h2 className="text-2xl font-semibold text-slate-800 ">
                                 {isListening ? "I'm listening..." : "Paused"}
                             </h2>
-                            <p className="text-slate-500 dark:text-slate-400">Ceritakan apa yang kamu rasakan hari ini...</p>
+                            <p className="text-slate-500 ">Ceritakan apa yang kamu rasakan hari ini...</p>
                         </div>
 
                         {/* Transcript Display */}
-                        <div className="w-full max-h-60 overflow-y-auto bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm min-h-[150px] transition-colors">
-                            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+                        <div className="w-full max-h-60 overflow-y-auto bg-white p-6 rounded-2xl border border-slate-100 shadow-sm min-h-[150px] transition-colors">
+                            <p className="text-lg text-slate-700 leading-relaxed">
                                 {transcript}
                                 <span className="text-slate-400">{interimTranscript}</span>
                                 {(!transcript && !interimTranscript) && (
@@ -153,21 +153,21 @@ export default function VoiceJournalPage() {
                                     analysisResult.inferredMood === "Sad" ? "😔" :
                                         analysisResult.inferredMood === "Anxious" ? "😰" : "😐"
                             }</span>
-                            <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
+                            <h2 className="text-2xl font-bold text-slate-800 ">
                                 {analysisResult.inferredMood} ({analysisResult.inferredScale}/10)
                             </h2>
                         </div>
 
                         {/* Insight Card */}
-                        <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-6 rounded-3xl border border-blue-100 dark:border-blue-800/50 shadow-sm relative overflow-hidden transition-colors">
+                        <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-3xl border border-blue-100 shadow-sm relative overflow-hidden transition-colors">
                             <div className="absolute top-0 right-0 p-4 opacity-10">
                                 <SparklesIcon className="size-24 text-blue-500" />
                             </div>
-                            <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-2 flex items-center gap-2">
+                            <h3 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
                                 Insight AI
                                 {isPlaying && <Volume2 className="size-4 animate-pulse" />}
                             </h3>
-                            <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                            <p className="text-slate-700 leading-relaxed mb-4">
                                 {analysisResult.insight}
                             </p>
                             <button
@@ -181,12 +181,12 @@ export default function VoiceJournalPage() {
 
                         {/* Suggestions */}
                         <div className="space-y-4">
-                            <h3 className="font-semibold text-slate-800 dark:text-slate-100 px-2">Saran & Masukan</h3>
+                            <h3 className="font-semibold text-slate-800 px-2">Saran & Masukan</h3>
                             <div className="grid gap-3">
                                 {analysisResult.suggestions?.map((s: string, i: number) => (
-                                    <div key={i} className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm flex items-start gap-3">
+                                    <div key={i} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3">
                                         <div className="mt-1 size-2 rounded-full bg-blue-400 shrink-0" />
-                                        <p className="text-slate-600 dark:text-slate-300 text-sm">{s}</p>
+                                        <p className="text-slate-600 text-sm">{s}</p>
                                     </div>
                                 ))}
                             </div>

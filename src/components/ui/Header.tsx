@@ -82,7 +82,7 @@ export function Header({ userName = "User", hasCheckedIn = false }: HeaderProps)
             message: "Start your journey of inner reflection today.",
             read: true,
             icon: <Sparkles className="size-4 text-purple-500" />,
-            bgColor: "bg-purple-100 dark:bg-purple-900/30"
+            bgColor: "bg-purple-100 "
         },
         ...(hasCheckedIn
             ? [{
@@ -91,7 +91,7 @@ export function Header({ userName = "User", hasCheckedIn = false }: HeaderProps)
                 message: "You've completed your daily check-in. Keep it up!",
                 read: false,
                 icon: <CheckCircle2 className="size-4 text-green-500" />,
-                bgColor: "bg-green-100 dark:bg-green-900/30"
+                bgColor: "bg-green-100 "
             }]
             : [{
                 id: 3,
@@ -99,7 +99,7 @@ export function Header({ userName = "User", hasCheckedIn = false }: HeaderProps)
                 message: "How are you feeling properly? Take a moment to reflect.",
                 read: false,
                 icon: <Clock className="size-4 text-blue-500" />,
-                bgColor: "bg-blue-100 dark:bg-blue-900/30"
+                bgColor: "bg-blue-100 "
             }]
         )
     ];
@@ -107,7 +107,7 @@ export function Header({ userName = "User", hasCheckedIn = false }: HeaderProps)
     const unreadCount = notifications.filter(n => !n.read).length;
 
     return (
-        <header className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-border dark:border-slate-800 transition-colors">
+        <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-border transition-colors">
             <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
@@ -129,14 +129,14 @@ export function Header({ userName = "User", hasCheckedIn = false }: HeaderProps)
                                 setShowNotifications(false);
                                 setShowProfileMenu(false);
                             }}
-                            className="p-2 rounded-full hover:bg-secondary dark:hover:bg-slate-800 transition-colors"
+                            className="p-2 rounded-full hover:bg-secondary :bg-slate-800 transition-colors"
                         >
                             <Settings className="size-5 text-muted-foreground" />
                         </button>
 
                         {showSettings && (
-                            <div className="absolute right-0 top-full mt-2 w-56 bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-border dark:border-slate-800 overflow-hidden z-50">
-                                <div className="p-3 border-b border-border dark:border-slate-800 bg-gray-50/50 dark:bg-slate-800/50">
+                            <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-2xl shadow-xl border border-border overflow-hidden z-50">
+                                <div className="p-3 border-b border-border bg-gray-50/50 ">
                                     <h3 className="font-semibold text-sm text-foreground">{t('settings')}</h3>
                                 </div>
                                 <div className="p-2 space-y-1">
@@ -166,7 +166,7 @@ export function Header({ userName = "User", hasCheckedIn = false }: HeaderProps)
                                 setShowProfileMenu(false);
                                 setShowSettings(false);
                             }}
-                            className="p-2 rounded-full hover:bg-secondary dark:hover:bg-slate-800 transition-colors relative"
+                            className="p-2 rounded-full hover:bg-secondary :bg-slate-800 transition-colors relative"
                         >
                             <Bell className="size-5 text-muted-foreground" />
                             {unreadCount > 0 && (
@@ -175,8 +175,8 @@ export function Header({ userName = "User", hasCheckedIn = false }: HeaderProps)
                         </button>
 
                         {showNotifications && (
-                            <div className="absolute right-0 top-full mt-2 w-72 bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-border dark:border-slate-800 overflow-hidden z-50">
-                                <div className="p-3 border-b border-border dark:border-slate-800 bg-gray-50/50 dark:bg-slate-800/50 flex justify-between items-center">
+                            <div className="absolute right-0 top-full mt-2 w-72 bg-white rounded-2xl shadow-xl border border-border overflow-hidden z-50">
+                                <div className="p-3 border-b border-border bg-gray-50/50 flex justify-between items-center">
                                     <h3 className="font-semibold text-sm text-foreground">{t('notifications')}</h3>
                                     <span className="text-[10px] bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full font-medium">
                                         {unreadCount} {t('new')}
@@ -184,7 +184,7 @@ export function Header({ userName = "User", hasCheckedIn = false }: HeaderProps)
                                 </div>
                                 <div className="p-2 max-h-72 overflow-y-auto space-y-1">
                                     {notifications.map((note) => (
-                                        <div key={note.id} className="p-3 hover:bg-secondary/50 dark:hover:bg-slate-800 rounded-xl cursor-pointer transition-colors flex gap-3 items-start">
+                                        <div key={note.id} className="p-3 hover:bg-secondary/50 :bg-slate-800 rounded-xl cursor-pointer transition-colors flex gap-3 items-start">
                                             <div className={`p-2 rounded-full shrink-0 ${note.bgColor}`}>
                                                 {note.icon}
                                             </div>
@@ -207,28 +207,28 @@ export function Header({ userName = "User", hasCheckedIn = false }: HeaderProps)
                                 setShowNotifications(false);
                                 setShowSettings(false);
                             }}
-                            className="p-2 rounded-full hover:bg-secondary dark:hover:bg-slate-800 transition-colors"
+                            className="p-2 rounded-full hover:bg-secondary :bg-slate-800 transition-colors"
                         >
                             <User className="size-5 text-muted-foreground" />
                         </button>
 
                         {showProfileMenu && (
-                            <div className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-border dark:border-slate-800 overflow-hidden z-50">
-                                <div className="p-3 border-b border-border dark:border-slate-800 bg-gray-50/50 dark:bg-slate-800/50">
+                            <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-2xl shadow-xl border border-border overflow-hidden z-50">
+                                <div className="p-3 border-b border-border bg-gray-50/50 ">
                                     <p className="font-medium text-sm truncate text-foreground">{userName}</p>
                                     <p className="text-xs text-muted-foreground">{t('account')}</p>
                                 </div>
                                 <div className="p-1">
                                     <Link
                                         href="/history"
-                                        className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 dark:text-gray-300 hover:bg-secondary/50 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white rounded-xl transition-colors"
+                                        className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:bg-secondary/50 :bg-slate-800 hover:text-gray-900 :text-white rounded-xl transition-colors"
                                         onClick={() => setShowProfileMenu(false)}
                                     >
                                         History
                                     </Link>
                                     <button
                                         onClick={() => signOut({ callbackUrl: "/login" })}
-                                        className="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-700 rounded-xl transition-colors text-left"
+                                        className="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 :bg-red-900/30 hover:text-red-700 rounded-xl transition-colors text-left"
                                     >
                                         {t('signOut')}
                                     </button>

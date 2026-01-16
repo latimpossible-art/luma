@@ -46,7 +46,7 @@ export function QuickActions({ className, showInsightButton, onShowInsight }: Qu
             {/* Quick Action Chips */}
             <div className="flex flex-wrap gap-2">
                 <Link href="/breathing">
-                    <button className="px-4 py-2 bg-white dark:bg-slate-900 border border-border dark:border-slate-800 rounded-full text-sm font-medium hover:bg-secondary/50 dark:hover:bg-slate-800 transition-colors flex items-center gap-2 text-foreground">
+                    <button className="px-4 py-2 bg-white border border-border rounded-full text-sm font-medium hover:bg-secondary/50 :bg-slate-800 transition-colors flex items-center gap-2 text-foreground">
                         <Wind className="size-4 text-blue-500" />
                         {t('breathing')}
                     </button>

@@ -35,25 +35,25 @@ export default function BreathingPage() {
     const currentPhase = BREATHING_PHASES[phaseIndex];
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-sky-50 to-blue-50/30 dark:from-slate-950 dark:to-slate-900 transition-colors flex flex-col overflow-hidden relative">
+        <div className="min-h-screen bg-gradient-to-b from-sky-50 to-blue-50/30 transition-colors flex flex-col overflow-hidden relative">
             {/* Background Elements */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[-20%] left-[-10%] size-[500px] rounded-full bg-blue-200/30 dark:bg-blue-900/20 blur-[100px]" />
-                <div className="absolute bottom-[-20%] right-[-10%] size-[500px] rounded-full bg-purple-200/30 dark:bg-purple-900/20 blur-[100px]" />
+                <div className="absolute top-[-20%] left-[-10%] size-[500px] rounded-full bg-blue-200/30 blur-[100px]" />
+                <div className="absolute bottom-[-20%] right-[-10%] size-[500px] rounded-full bg-purple-200/30 blur-[100px]" />
             </div>
 
             <div className="z-10 relative flex-1 flex flex-col">
                 <Header />
 
                 <main className="flex-1 flex flex-col items-center justify-center p-6 relative">
-                    <Link href="/dashboard" className="absolute top-6 left-6 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+                    <Link href="/dashboard" className="absolute top-6 left-6 text-slate-400 hover:text-slate-600 :text-slate-300 transition-colors">
                         <ArrowLeft className="size-6" />
                     </Link>
 
                     <div className="text-center space-y-12 w-full max-w-md">
                         <div className="space-y-2">
-                            <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">Relax & Breathe</h1>
-                            <p className="text-slate-500 dark:text-slate-400">Box breathing technique for calmness.</p>
+                            <h1 className="text-3xl font-bold text-slate-800 ">Relax & Breathe</h1>
+                            <p className="text-slate-500 ">Box breathing technique for calmness.</p>
                         </div>
 
                         {/* Breathing Circle */}
@@ -65,7 +65,7 @@ export default function BreathingPage() {
                                     opacity: isActive ? 0.3 : 0.1
                                 }}
                                 transition={{ duration: currentPhase.duration / 1000, ease: "easeInOut" }}
-                                className="absolute size-64 rounded-full bg-blue-300 dark:bg-blue-700/40"
+                                className="absolute size-64 rounded-full bg-blue-300 "
                             />
                             <motion.div
                                 animate={{
@@ -73,7 +73,7 @@ export default function BreathingPage() {
                                     opacity: isActive ? 0.4 : 0.1
                                 }}
                                 transition={{ duration: currentPhase.duration / 1000, ease: "easeInOut" }}
-                                className="absolute size-48 rounded-full bg-blue-400 dark:bg-blue-600/50"
+                                className="absolute size-48 rounded-full bg-blue-400 "
                             />
 
                             {/* Central Circle */}
@@ -82,7 +82,7 @@ export default function BreathingPage() {
                                 transition={{ duration: currentPhase.duration / 1000, ease: "easeInOut" }}
                                 className="relative z-10 size-32 rounded-full bg-white shadow-xl flex items-center justify-center"
                             >
-                                <span className={`text-xl font-medium ${isActive ? "text-blue-600 dark:text-blue-400" : "text-slate-400 dark:text-slate-500"}`}>
+                                <span className={`text-xl font-medium ${isActive ? "text-blue-600 " : "text-slate-400 "}`}>
                                     {isActive ? currentPhase.text : "Ready?"}
                                 </span>
                             </motion.div>
@@ -93,7 +93,7 @@ export default function BreathingPage() {
                             <button
                                 onClick={() => setIsActive(!isActive)}
                                 className={`px-8 py-4 rounded-full font-medium text-lg shadow-lg hover:shadow-xl transition-all flex items-center gap-3 ${isActive
-                                    ? "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700"
+                                    ? "bg-white text-slate-700 hover:bg-slate-50 :bg-slate-700"
                                     : "bg-blue-600 text-white hover:bg-blue-700"
                                     }`}
                             >

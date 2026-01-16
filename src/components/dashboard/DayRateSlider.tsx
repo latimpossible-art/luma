@@ -37,9 +37,9 @@ export function DayRateSlider({ value: initialValue = 6, onChange, className }: 
                                 relative flex-1 h-10 rounded-lg transition-all duration-200
                                 ${num <= value
                                     ? "bg-gradient-to-r from-blue-400 to-blue-500"
-                                    : "bg-secondary dark:bg-slate-800"
+                                    : "bg-secondary "
                                 }
-                                ${num === value ? "ring-2 ring-primary dark:ring-blue-400 ring-offset-2 dark:ring-offset-slate-900" : ""}
+                                ${num === value ? "ring-2 ring-primary ring-offset-2 " : ""}
                                 hover:scale-105
                             `}
                         >

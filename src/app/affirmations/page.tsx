@@ -47,18 +47,18 @@ export default function AffirmationsPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-slate-50 to-pink-50/30 dark:from-slate-950 dark:to-slate-900 transition-colors flex flex-col">
+        <div className="min-h-screen bg-gradient-to-b from-slate-50 to-pink-50/30 transition-colors flex flex-col">
             <Header />
 
             <main className="flex-1 flex flex-col items-center justify-center p-6 relative">
-                <Link href="/dashboard" className="absolute top-6 left-6 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+                <Link href="/dashboard" className="absolute top-6 left-6 text-slate-400 hover:text-slate-600 :text-slate-300 transition-colors">
                     <ArrowLeft className="size-6" />
                 </Link>
 
                 <div className="w-full max-w-md space-y-8">
                     <div className="text-center space-y-2">
-                        <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">Daily Affirmations</h1>
-                        <p className="text-slate-500 dark:text-slate-400">Positive thoughts to brighten your day.</p>
+                        <h1 className="text-3xl font-bold text-slate-800 ">Daily Affirmations</h1>
+                        <p className="text-slate-500 ">Positive thoughts to brighten your day.</p>
                     </div>
 
                     {/* Card Container */}

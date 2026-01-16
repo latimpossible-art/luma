@@ -72,7 +72,7 @@ export default function CheckInPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-blue-50/50 to-purple-50/50 dark:from-slate-950 dark:to-slate-900 transition-colors flex flex-col items-center justify-center p-6 sm:p-12 overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-b from-blue-50/50 to-purple-50/50 transition-colors flex flex-col items-center justify-center p-6 sm:p-12 overflow-hidden">
             <AnimatePresence mode="wait">
                 {step === "mood" ? (
                     <motion.div
@@ -187,7 +187,7 @@ export default function CheckInPage() {
                             >
                                 <div className="flex items-center gap-3">
                                     <Sparkles className="size-5 text-purple-500" />
-                                    <h3 className="font-semibold text-purple-700 dark:text-purple-300">Recommended For You</h3>
+                                    <h3 className="font-semibold text-purple-700 ">Recommended For You</h3>
                                 </div>
                                 <div className="space-y-3">
                                     {result.contentRecommendations.map((rec, i) => (
@@ -198,7 +198,7 @@ export default function CheckInPage() {
                                             rel="noopener noreferrer"
                                             className="flex items-center gap-3 p-3 bg-white/80 rounded-xl hover:bg-white hover:shadow-md transition-all group"
                                         >
-                                            <div className="p-2 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+                                            <div className="p-2 rounded-lg bg-purple-100 text-purple-600 ">
                                                 {getContentIcon(rec.type)}
                                             </div>
                                             <span className="flex-1 font-medium text-foreground group-hover:text-purple-600 transition-colors">
@@ -226,7 +226,7 @@ export default function CheckInPage() {
                                         {getAnxietyDescription(result.anxietyLevel)} ({result.anxietyLevel}/10)
                                     </span>
                                 </div>
-                                <div className="h-3 bg-secondary dark:bg-slate-800 rounded-full overflow-hidden">
+                                <div className="h-3 bg-secondary rounded-full overflow-hidden">
                                     <motion.div
                                         initial={{ width: 0 }}
                                         animate={{ width: `${result.anxietyLevel * 10}%` }}
@@ -242,7 +242,7 @@ export default function CheckInPage() {
                                 {result.anxietyIndicators && result.anxietyIndicators.length > 0 && (
                                     <div className="flex flex-wrap gap-2 pt-1">
                                         {result.anxietyIndicators.map((indicator, i) => (
-                                            <span key={i} className="px-3 py-1 bg-secondary dark:bg-slate-800 text-secondary-foreground text-xs rounded-full">
+                                            <span key={i} className="px-3 py-1 bg-secondary text-secondary-foreground text-xs rounded-full">
                                                 {indicator}
                                             </span>
                                         ))}

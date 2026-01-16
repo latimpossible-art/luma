@@ -40,7 +40,7 @@ export function ScaleQuestion({ question, onAnswer, className }: ScaleQuestionPr
 
                 {/* Thumb Visual */}
                 <motion.div
-                    className="absolute top-1/2 rounded-full shadow-lg bg-white dark:bg-slate-800 border border-border flex items-center justify-center z-10 pointer-events-none"
+                    className="absolute top-1/2 rounded-full shadow-lg bg-white border border-border flex items-center justify-center z-10 pointer-events-none"
                     style={{
                         left: `calc(${((value - 1) / 9) * 100}% - 1.5rem)`,
                         width: "3rem",

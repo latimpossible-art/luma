@@ -3,12 +3,12 @@ import { Sparkles } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors flex flex-col items-center justify-center p-6">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 transition-colors flex flex-col items-center justify-center p-6">
       {/* Background Decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 size-64 bg-blue-300/20 dark:bg-blue-700/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 size-64 bg-purple-300/20 dark:bg-purple-700/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 bg-pink-300/10 dark:bg-pink-700/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 size-64 bg-blue-300/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 size-64 bg-purple-300/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 bg-pink-300/10 rounded-full blur-3xl" />
       </div>
 
       <main className="relative flex flex-col items-center gap-8 text-center max-w-2xl">

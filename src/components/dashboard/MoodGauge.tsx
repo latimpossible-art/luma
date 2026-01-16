@@ -57,7 +57,7 @@ export function MoodGauge({ value = 50, className }: MoodGaugeProps) {
                     transition={{ type: "spring", stiffness: 100, damping: 15 }}
                 >
                     <div className="w-full h-full bg-foreground rounded-full shadow-lg" />
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 size-6 rounded-full bg-white dark:bg-slate-900 border-4 border-foreground shadow-md" />
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 size-6 rounded-full bg-white border-4 border-foreground shadow-md" />
                 </motion.div>
             </div>
 

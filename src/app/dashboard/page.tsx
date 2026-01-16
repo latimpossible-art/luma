@@ -49,7 +49,7 @@ export default function DashboardPage() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-blue-50/50 to-purple-50/50 dark:from-slate-950 dark:to-slate-900 transition-colors">
+        <div className="min-h-screen bg-gradient-to-b from-blue-50/50 to-purple-50/50 transition-colors">
             <Header userName={userName} hasCheckedIn={hasCheckedIn} />
 
             <main className="max-w-4xl mx-auto px-4 py-8 pb-24">
@@ -59,7 +59,7 @@ export default function DashboardPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="mb-8"
                 >
-                    <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent">
+                    <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                         {t('welcome')}, {userName}!
                     </h1>
                     <p className="text-muted-foreground text-lg">{t('feeling')}</p>
@@ -73,7 +73,7 @@ export default function DashboardPage() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.1 }}
-                            className="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-sm border border-border dark:border-slate-800 transition-colors"
+                            className="bg-white rounded-3xl p-6 shadow-sm border border-border transition-colors"
                         >
                             <MoodGauge value={moodValue} />
                         </motion.div>
